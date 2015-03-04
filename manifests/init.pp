@@ -39,6 +39,11 @@ class nginx (
   $fastcgi_cache_path             = undef,
   $fastcgi_cache_use_stale        = undef,
   $gzip                           = undef,
+  $gzip_comp_level                = undef,
+  $gzip_proxied                   = undef,
+  $gzip_vary                      = undef,
+  $gzip_types                     = undef,
+  $charset_types                  = undef,
   $http_cfg_append                = undef,
   $http_tcp_nodelay               = undef,
   $http_tcp_nopush                = undef,
@@ -156,6 +161,11 @@ class nginx (
         $fastcgi_cache_path or
         $fastcgi_cache_use_stale or
         $gzip or
+        $gzip_comp_level or
+        $gzip_proxied or
+        $gzip_vary or
+        $gzip_types or
+        $charset_types or
         $http_access_log or
         $http_cfg_append or
         $http_tcp_nodelay or
@@ -237,6 +247,11 @@ class nginx (
       fastcgi_cache_path             => $fastcgi_cache_path,
       fastcgi_cache_use_stale        => $fastcgi_cache_use_stale,
       gzip                           => $gzip,
+      gzip_comp_level                => $gzip_comp_level,
+      gzip_proxied                   => $gzip_proxied,
+      gzip_vary                      => $gzip_vary,
+      gzip_types                     => $gzip_types,
+      charset_types                  => $charset_types,
       http_access_log                => $http_access_log,
       http_cfg_append                => $http_cfg_append,
       http_tcp_nodelay               => $http_tcp_nodelay,
